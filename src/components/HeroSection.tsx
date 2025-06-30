@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
-import { CheckCircle, Zap, Globe, ArrowRight, Smartphone } from "lucide-react";
+import {  Smartphone } from "lucide-react";
+
+
 
 const Hero = () => {
+
+  
   return (
     <div className="text-gray-900 dark:text-gray-100">
       {/* Background decoration */}
@@ -15,25 +19,26 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-5xl lg:text-7xl font-bold leading-tight mb-6"
+          className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-6"
         >
-          Never Miss a{" "}
+          Stops{" "}
           <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Verified Call
+            phone-based fraud
           </span>{" "}
-          Again
+          before the conversation starts.
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-xl lg:text-2xl mb-10 text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl"
+          className="text-lg md:text-xl lg:text-2xl mb-10 text-gray-600 dark:text-gray-300 leading-relaxed max-w-4xl"
         >
-          Experience the future of secure communication with VerifyCall's real-time call verification and advanced AI-powered security features.
+          VerifyCall is the real-time call-validation layer built to prevent cyber fraud. VerifyCall instantly authenticates every inbound call, shutting down impersonation scams, reducing fraud losses and restoring customer trust.
         </motion.p>
 
-        {/* Enhanced Features */}
+        {/* Enhanced Features - COMMENTED OUT */}
+        {/* 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -74,8 +79,10 @@ const Hero = () => {
             </span>
           </motion.div>
         </motion.div>
+        */}
 
-        {/* Enhanced CTA Buttons */}
+        {/* Enhanced CTA Buttons - COMMENTED OUT */}
+        {/* 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -98,6 +105,7 @@ const Hero = () => {
             Watch Demo
           </motion.button>
         </motion.div>
+        */}
 
         {/* App Store Download Buttons */}
         <motion.div
@@ -108,10 +116,10 @@ const Hero = () => {
         >
           <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-400 mb-4 sm:mb-0">
             <Smartphone size={20} />
-            <span className="font-medium">Download now:</span>
+            <span className="font-medium">For Customer:</span>
           </div>
           
-          <div className="flex space-x-4">
+          <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
             {/* App Store Button */}
             <motion.a
               href="#"
@@ -146,7 +154,7 @@ const Hero = () => {
           </div>
         </motion.div>
       </div>
-    </div>
+    </div>                
   );
 };
 
