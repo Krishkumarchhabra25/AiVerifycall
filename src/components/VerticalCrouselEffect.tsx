@@ -15,7 +15,7 @@ const VerticalImageCarousel = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length);
-    }, 3000);
+    }, 6000);
     return () => clearInterval(timer);
   }, []);
 
@@ -30,7 +30,7 @@ const VerticalImageCarousel = () => {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -100, opacity: 0 }}
           transition={{ duration: 0.7 }}
-          className="absolute inset-0 w-full h-full object-contain roundex-2xl"
+          className="absolute inset-0 w-full h-full object-contain rounded-5xl"
         />
       </AnimatePresence>
     </div>

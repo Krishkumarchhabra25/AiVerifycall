@@ -82,16 +82,19 @@ const Index = () => {
       </nav>
 
       {/* Enhanced Hero Section */}
-      <section className="pt-20 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 relative overflow-hidden">
-      <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[90vh]">
-  <div className="order-2 lg:order-2 ml-28 w-full ">
-    <Hero />
+   <section className="pt-20 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 relative overflow-hidden">
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[90vh] px-4 sm:px-8 lg:px-28">
+    {/* Hero Text First on Mobile */}
+    <div className="order-1 lg:order-1 w-full">
+      <Hero />
+    </div>
+
+    {/* Carousel Second on Mobile */}
+    <div className="order-2 lg:order-2 p-6 flex justify-center items-center w-full">
+      <VerticalImageCarousel />
+    </div>
   </div>
-  <div className="order-1 lg:order-2 flex justify-center items-center">
-    <VerticalImageCarousel />
-  </div>
-</div>
-      </section>
+</section>
 
       {/* How it Works Section - COMMENTED OUT */}
       {/* 
