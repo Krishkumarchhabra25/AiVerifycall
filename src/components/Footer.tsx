@@ -94,7 +94,7 @@ const Footer = () => {
         </div>
 
         {/* Newsletter Signup */}
-        <motion.div
+{/*         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -123,7 +123,7 @@ const Footer = () => {
               </motion.button>
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-200 dark:border-gray-800">
