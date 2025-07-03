@@ -1,78 +1,68 @@
-import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
 
 const mockups = [
   {
     src: "/images/callerid.png",
-    label: "", // No text for 1st image
+    label: "", // No label for first image
   },
   {
     src: "/images/straightmokeup.png",
-    label: "Even with No Caller ID",
+    label: "Even with No Caller ID", // Label for second image
   },
 ];
 
 const RightHeroCarousel = () => {
-  const [index, setIndex] = useState(0);
-  const [showLabel, setShowLabel] = useState(false);
-
-  useEffect(() => {
-    setShowLabel(false); // reset text visibility on image switch
-
-    const labelTimeout = setTimeout(() => {
-      if (mockups[index].label) {
-        setShowLabel(true); // show label after zoom
-      }
-    }, 1200); // delay after zoom completes
-
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % mockups.length);
-    }, 5000);
-
-    return () => {
-      clearTimeout(labelTimeout);
-      clearInterval(interval);
-    };
-  }, [index]);
-
   return (
-    <div className="relative w-full h-full flex justify-center items-center mt-16 lg:mt-0">
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={mockups[index].src}
-          initial={{ opacity: 0, scale: 0.9, y: 30 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.9, y: 30 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="relative"
-        >
-          {/* Zoom-in to notification effect */}
-          <motion.img
-            src={mockups[index].src}
-            alt={`Mockup ${index}`}
-            initial={{ scale: 0.92, y: 20 }}
-            animate={{ scale: 1.05, y: -5 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            className="w-[200px] sm:w-[230px] md:w-[340px]  drop-shadow-2xl"
-          />
+    <div
+      className="relative w-full h-full overflow-visible
+                 px-4 sm:px-6 md:px-10
+                 flex flex-col md:flex-row items-center justify-center
+                 gap-10 md:gap-6 lg:gap-10 xl:gap-16"
+    >
+      {/* First Image (callerid.png) */}
+      <div
+        className="relative flex-shrink-0 mb-10 md:mb-0
+                   transform rotate-3 md:rotate-6 md:translate-x-16
+                   md:-translate-y-6 lg:-translate-y-10
+                   z-10"
+      >
+        <img
+          src={mockups[0].src}
+          alt="Caller ID Mockup"
+          className="w-full max-w-[200px] sm:max-w-[230px] md:max-w-[280px] lg:max-w-[320px]
+                     drop-shadow-2xl mx-auto block"
+        />
+      </div>
 
-          {/* Only for 2nd image */}
-          {mockups[index].label && showLabel && (
-            <motion.div
-  initial={{ opacity: 0, x: 20 }}
-  animate={{ opacity: 1, x: 0 }}
-  transition={{ duration: 0.6, ease: "easeOut" }}
-  className="absolute md:top-20 left-24 w-full sm:left-auto sm:right-[150px] md:right-[-200px] flex items-center gap-2"
->
+      {/* Second Image (straightmockup.png) with label */}
+      <div
+        className="relative flex-shrink-0
+                   transform -rotate-3 md:-rotate-6
+                   z-20"
+      >
+        {/* Label */}
+        {mockups[1].label && (
+          <div
+            className="absolute flex justify-center w-full z-30
+                       -top-12 sm:-top-14 md:-top-16 lg:-top-10 left-1/2 -translate-x-1/2"
+          >
+            <div
+              className="text-xs sm:text-sm md:text-base lg:text-lg
+                         font-semibold text-white bg-gray-800/90
+                         px-3 py-1.5 rounded-md shadow
+                         whitespace-nowrap"
+            >
+              {mockups[1].label}
+            </div>
+          </div>
+        )}
 
-              <div className="w-16 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500"></div>
-              <div className="text-sm sm:text-[12px] font-semibold text-white bg-gray-800/90 p-2 md:px-3 py-1 rounded-md shadow">
-                {mockups[index].label}
-              </div>
-            </motion.div>
-          )}
-        </motion.div>
-      </AnimatePresence>
+        <img
+          src={mockups[1].src}
+          alt="Even with No Caller ID Mockup"
+          className="w-full max-w-[200px] sm:max-w-[230px] md:max-w-[280px] lg:max-w-[320px]
+                     drop-shadow-2xl mx-auto block"
+        />
+      </div>
     </div>
   );
 };

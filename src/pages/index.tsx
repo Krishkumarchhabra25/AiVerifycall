@@ -1,3 +1,4 @@
+// Index.tsx
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -6,7 +7,6 @@ import { Menu, X } from "lucide-react";
 import Hero from "@/components/HeroSection";
 import RightHeroCarousel from "@/components/VerticalCrouselEffect";
 import WhySection from "@/components/WhySection";
-import BenefitsSection from "@/components/Benefits";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -14,7 +14,8 @@ const Index = () => {
 
   const navItems = [
     { name: "Why VerifyCall", href: "#why-verifycall" },
-    { name: "Benefits", href: "#benefits" },
+    { name: "For Organisations", href: "#fororganisations" },
+    { name: "How It Works", href: "#howitworks" },
     { name: "Scam Alerts", href: "#scam-alerts" },
     { name: "The Company", href: "#the-company" },
   ];
@@ -99,22 +100,21 @@ const Index = () => {
       )}
 
       {/* Hero Section */}
-      <section className="pt-20 bg-gradient-to-br from-gray-900 via-gray-950 to-black text-white relative overflow-x-hidden">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute w-64 sm:w-80 h-64 sm:h-80 bg-gradient-to-br from-blue-500/10 to-purple-600/10 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-40 -left-40 w-64 sm:w-80 h-64 sm:h-80 bg-gradient-to-tr from-emerald-500/10 to-blue-600/10 rounded-full blur-3xl"></div>
-        </div>
+      {/* Removed the absolute positioned background divs from here */}
+  <section className="bg-gradient-to-br from-gray-900 via-gray-950 to-black text-white relative overflow-x-hidden pt-20 min-h-screen flex items-center">
+  <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 flex flex-col md:flex-row justify-between items-center md:space-x-8">
+    {/* Left: Hero */}
+    <div className="w-full md:w-1/2 flex justify-center md:justify-start mb-8 md:mb-0 relative z-10">
+      <Hero />
+    </div>
 
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[90vh] px-4 sm:px-8 lg:px-28">
-          <div className="order-2 lg:order-1 w-full">
-            <Hero />
-          </div>
+    {/* Right: Carousel */}
+    <div className="w-full md:w-1/2 flex justify-center md:justify-end relative z-10">
+      <RightHeroCarousel />
+    </div>
+  </div>
+</section>
 
-          <div className="order-1 lg:order-2">
-            <RightHeroCarousel />
-          </div>
-        </div>
-      </section>
 
       <section
         id="why-verifycall"
@@ -123,9 +123,7 @@ const Index = () => {
         <WhySection />
       </section>
 
-      <section id="benefits" className="bg-gray-900">
-        <BenefitsSection />
-      </section>
+      <section id="benefits" className="bg-gray-900"></section>
 
       <Footer />
     </div>

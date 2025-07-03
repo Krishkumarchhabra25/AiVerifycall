@@ -41,3 +41,7 @@
   color: #888;
 }
 
+/* Add this to your global styles if not already */
+body {
+  overflow-x: hidden;
+}
