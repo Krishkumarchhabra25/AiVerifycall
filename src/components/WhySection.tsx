@@ -71,7 +71,7 @@ const rightBenefits = [
 
 const WhySection = () => {
   return (
-    <section className="bg-[#0e1217] text-white py-28">
+    <section className="bg-[#0e1217] text-white py-20 md:py-12">
       {/* Heading */}
       <div className="max-w-7xl mx-auto px-4 text-center">
         <motion.h2
@@ -119,19 +119,23 @@ const WhySection = () => {
         </div>
 
         {/* Center Image */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-          className="relative flex justify-center items-center"
-        >
-          <div className="absolute w-[320px] h-[320px] sm:w-[400px] sm:h-[400px] md:w-[480px] md:h-[480px] bg-gradient-to-br from-red-500/20 to-purple-600/10 blur-[100px] rounded-full z-0" />
-          <img
-            src="/images/moneyloss.png"
-            alt="Money Loss Impact"
-            className="relative z-10 w-[240px] sm:w-[300px] md:w-[360px] drop-shadow-2xl"
-          />
-        </motion.div>
+       <motion.div
+  initial={{ opacity: 0, scale: 0.9 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.6 }}
+  className="relative flex justify-center items-center"
+>
+  {/* Layered vibrant background */}
+  <div className="absolute w-[340px] h-[340px] sm:w-[420px] sm:h-[420px] md:w-[500px] md:h-[500px] bg-gradient-to-br from-red-500/30 via-pink-400/20 to-purple-600/20 blur-[120px] rounded-full z-0" />
+  <div className="absolute w-[180px] h-[180px] bg-gradient-to-tr from-red-400/30 to-purple-400/20 blur-[90px] rounded-full z-0" />
+
+  <img
+    src="/images/dwnfall.png"
+    alt="Money Loss Impact"
+    className="relative z-10 w-[240px] sm:w-[300px] md:w-[360px] drop-shadow-2xl rounded-2xl"
+  />
+</motion.div>
+
 
         {/* Right Impact Points */}
         <div className="space-y-10">
@@ -200,9 +204,9 @@ const WhySection = () => {
 
         {/* Image */}
         <img
-          src="/images/solution.png"
+          src="/images/staircase.jpg"
           alt="Verify Call Solution"
-          className="relative z-10 w-[240px] sm:w-[320px] md:w-[400px] drop-shadow-2xl rounded-xl"
+          className="relative z-10 w-[240px] sm:w-[320px] md:w-[500px] drop-shadow-2xl rounded-xl"
         />
 
     
@@ -244,7 +248,7 @@ const WhySection = () => {
         </div>
   
         {/* Grid Layout */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto px-4 items-center z-10 relative">
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 md:p-10 gap-12 max-w-7xl mx-auto px-4 items-center z-10 relative">
           {/* Left Benefits */}
           <div className="space-y-10">
             {leftBenefits.map((feature, index) => {
@@ -270,19 +274,23 @@ const WhySection = () => {
           </div>
   
           {/* Center Image with glow */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="relative flex justify-center items-center"
-          >
-            <div className="absolute w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] md:w-[400px] md:h-[400px] bg-gradient-to-br from-indigo-500/20 to-purple-600/10 blur-[100px] rounded-full z-0" />
-            <img
-              src="/images/benefitss.png"
-              alt="Benefits Mockup"
-              className="w-[180px] sm:w-[220px] md:w-[280px] drop-shadow-2xl z-10"
-            />
-          </motion.div>
+        <motion.div
+  initial={{ opacity: 0, scale: 0.95 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.5 }}
+  className="relative flex justify-center items-center"
+>
+  {/* Soft glowing gradient layers */}
+  <div className="absolute w-[300px] h-[300px] sm:w-[360px] sm:h-[360px] md:w-[420px] md:h-[420px] bg-gradient-to-br from-indigo-500/30 via-blue-400/20 to-purple-600/20 blur-[120px] rounded-full z-0" />
+  <div className="absolute w-[200px] h-[200px] bg-gradient-to-tr from-purple-400/30 to-blue-500/20 blur-[80px] rounded-full z-0" />
+
+  <img
+    src="/images/roi.png"
+    alt="Benefits Mockup"
+    className="relative z-10 w-[540px] sm:w-[300px] md:w-[600px] drop-shadow-2xl rounded-2xl"
+  />
+</motion.div>
+
   
           {/* Right Benefits */}
           <div className="space-y-10">

@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 
 const mockups = [
   {
@@ -21,7 +22,7 @@ const RightHeroCarousel = () => {
       {/* First Image (callerid.png) */}
       <div
         className="relative flex-shrink-0 mb-10 md:mb-0
-                   transform rotate-3 md:rotate-6 md:translate-x-16
+                   transform rotate-3 md:rotate-6 md:translate-x-27
                    md:-translate-y-6 lg:-translate-y-10
                    z-10"
       >
@@ -41,20 +42,23 @@ const RightHeroCarousel = () => {
       >
         {/* Label */}
         {mockups[1].label && (
-          <div
-            className="absolute flex justify-center w-full z-30
-                       -top-12 sm:-top-14 md:-top-16 lg:-top-10 left-1/2 -translate-x-1/2"
-          >
-            <div
-              className="text-xs sm:text-sm md:text-base lg:text-lg
-                         font-semibold text-white bg-gray-800/90
-                         px-3 py-1.5 rounded-md shadow
-                         whitespace-nowrap"
-            >
-              {mockups[1].label}
-            </div>
-          </div>
-        )}
+  <motion.div
+    initial={{ scale: 0.8, opacity: 0 }}
+    animate={{ scale: 1, opacity: 1 }}
+    transition={{ type: "spring", stiffness: 400, damping: 90, delay: 0.8 }}
+    className="absolute flex justify-center w-full z-30
+               -top-12 sm:-top-14 md:-top-16 lg:-top-10 left-1/2 -translate-x-1/2"
+  >
+    <div
+      className="text-xs sm:text-sm md:text-base lg:text-lg
+                 font-semibold text-white bg-gray-800/90
+                 px-3 py-1.5 rounded-md shadow
+                 whitespace-nowrap"
+    >
+      {mockups[1].label}
+    </div>
+  </motion.div>
+)}
 
         <img
           src={mockups[1].src}

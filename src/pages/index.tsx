@@ -101,7 +101,7 @@ const Index = () => {
 
       {/* Hero Section */}
       {/* Removed the absolute positioned background divs from here */}
-  <section className="bg-gradient-to-br from-gray-900 via-gray-950 to-black text-white relative overflow-x-hidden pt-20 min-h-screen flex items-center">
+<section className="bg-[#0e1217] text-white relative overflow-x-hidden pt-20 min-h-screen flex items-center">
   <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 flex flex-col md:flex-row justify-between items-center md:space-x-8">
     {/* Left: Hero */}
     <div className="w-full md:w-1/2 flex justify-center md:justify-start mb-8 md:mb-0 relative z-10">
@@ -114,6 +114,7 @@ const Index = () => {
     </div>
   </div>
 </section>
+
 
 
       <section
