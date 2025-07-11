@@ -8,6 +8,8 @@ import Hero from "@/components/HeroSection";
 import RightHeroCarousel from "@/components/VerticalCrouselEffect";
 import WhySection from "@/components/WhySection";
 import Footer from "@/components/Footer";
+import HowItWorksSection from "./HowItWorks";
+import ForOrganisations from "./TheCompany";
 
 const Index = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -116,6 +118,7 @@ const Index = () => {
 </section>
 
 
+     
 
       <section
         id="why-verifycall"
@@ -123,6 +126,23 @@ const Index = () => {
       >
         <WhySection />
       </section>
+
+
+ <section
+        id="fororganisations"
+        className=" bg-gradient-to-br from-gray-900 via-gray-950 to-black"
+      >
+        <ForOrganisations />
+      </section>
+      <section id="benefits" className="bg-gray-900"></section>
+      <section
+        id="howitworks"
+        className=" bg-gradient-to-br from-gray-900 via-gray-950 to-black"
+      >
+        <HowItWorksSection />
+      </section>
+      <section id="benefits" className="bg-gray-900"></section>
+
 
       <section id="benefits" className="bg-gray-900"></section>
 

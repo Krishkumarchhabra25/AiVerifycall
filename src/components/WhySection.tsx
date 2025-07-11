@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Shield, AlertTriangle, TrendingDown, Users  , Phone ,  Zap} from "lucide-react";
+import { Shield, AlertTriangle, TrendingDown, Users  , Phone ,  Zap , CheckCircle} from "lucide-react";
 
 const featuresLeft = [
   {
@@ -52,6 +52,16 @@ const leftBenefits = [
     description:
       "Blocks impersonations from banks, govt agencies & more through one integration.",
   },
+    {
+    icon: CheckCircle,
+    title: "Real-Time Caller Authentication",
+    description: "Confirms the verified organisation as soon as the phone rings. See “Verified organisation as a Caller” and pick up with confidence—or hang up safely, without the fear of missing an important call.",
+  },
+    {
+    icon: Zap,
+    title: "Pre-Emptive Fraud Blocking",
+    description: "Stops scammers in their track – no notification – no need to trust. Immediate protection from financial and personal information theft.",
+  },
 ];
 
 const rightBenefits = [
@@ -66,7 +76,18 @@ const rightBenefits = [
     description:
       "No extra steps. Just a silent check and a trust badge. Better NPS, less hassle.",
   },
+    {
+    icon: Shield,
+    title: "Effortless Always-On Protection",
+    description: "VerifyCall app works quietly in the background. Peace of mind knowing every incoming call is automatically verified. Requires sign in only once.",
+  },
+  {
+    icon: Phone,
+    title: "Protects Beyond Mobile",
+    description: "Even scam calls on landlines are verified and stopped.",
+  },
 ];
+
 
 
 const WhySection = () => {
@@ -129,11 +150,16 @@ const WhySection = () => {
   <div className="absolute w-[340px] h-[340px] sm:w-[420px] sm:h-[420px] md:w-[500px] md:h-[500px] bg-gradient-to-br from-red-500/30 via-pink-400/20 to-purple-600/20 blur-[120px] rounded-full z-0" />
   <div className="absolute w-[180px] h-[180px] bg-gradient-to-tr from-red-400/30 to-purple-400/20 blur-[90px] rounded-full z-0" />
 
-  <img
-    src="/images/dwnfall.png"
-    alt="Money Loss Impact"
-    className="relative z-10 w-[240px] sm:w-[300px] md:w-[360px] drop-shadow-2xl rounded-2xl"
-  />
+  <div className="relative z-10">
+    <img
+      src="/images/dwnfall2.png"
+      alt="Money Loss Impact"
+      className="w-[240px] sm:w-[300px] md:w-[360px] drop-shadow-2xl rounded-2xl"
+    />
+
+    {/* Bottom Gradient Fade */}
+    <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[#0b0e14] to-transparent rounded-b-2xl pointer-events-none" />
+  </div>
 </motion.div>
 
 
