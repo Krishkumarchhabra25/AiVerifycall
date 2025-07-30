@@ -4,10 +4,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 import WhyVerifyCall from "./pages/WhyVerifyCall";
 import HowItWorks from "./pages/HowItWorks";
-import ForOrganizations from "./pages/ForOrganization";
-import ScamAlerts from "./pages/ScamAlerts";
-import TheCompany from "./pages/TheCompany";
+
 import Index from "./pages";
+import ForOrganisations from "./pages/ForOrganisations";
+import ScamAlertsSection from "./pages/ScamAlerts";
+import CompanySection from "./pages/Company";
 
 const queryClient = new QueryClient();
 
@@ -19,10 +20,9 @@ const App = () => (
           <Route path="/" element={<Index />} />
             <Route path="/why-verifycall" element={<WhyVerifyCall />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
-            <Route path="/for-organizations" element={<ForOrganizations />} />
-            <Route path="/scam-alerts" element={<ScamAlerts />} />
-            <Route path="/the-company" element={<TheCompany />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="/for-organizations" element={<ForOrganisations />} />
+            <Route path="/scam-alerts" element={<ScamAlertsSection />} />
+            <Route path="/scam-alerts" element={<CompanySection />} />
             <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

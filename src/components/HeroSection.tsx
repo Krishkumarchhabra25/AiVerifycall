@@ -7,30 +7,25 @@ const Hero = () => {
     // Removed the background decoration divs from here as well, they are now consolidated in Index.tsx
     <div className="text-gray-900 dark:text-gray-100 px-4 sm:px-6 md:px-0 md:text-left">
       <div className="relative z-10">
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 max-w-xl"
-        >
-          Stops{" "}
-          <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            phone-based fraud
-          </span>{" "}
-          before the conversation starts.
-        </motion.h1>
+   <motion.h1
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  className="text-white font-bold text-[50px] leading-[141.81%] mb-6 max-w-[588px]"
+>
+  Stops{" "}
+  <span className="text-[#6D44FA]">phone-based fraud</span>{" "}
+  before the conversation starts.
+</motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-base sm:text-lg md:text-xl lg:text-2xl mb-10 text-gray-600 dark:text-gray-300 leading-relaxed max-w-4xl"
-        >
-          VerifyCall is the real-time call-validation layer built to prevent
-          cyber fraud. VerifyCall instantly authenticates every inbound call,
-          shutting down impersonation scams, reducing fraud losses and
-          restoring customer trust.
-        </motion.p>
+<motion.p
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 0.2 }}
+  className="text-white text-opacity-70 font-normal text-[20px] leading-[172.342%] max-w-[588px] mb-10"
+>
+  VerifyCall is the real-time call-validation layer built to prevent cyber fraud. VerifyCall instantly authenticates every inbound call, shutting down impersonation scams, reducing fraud losses and restoring customer trust.
+</motion.p>
 
         {/* App Store Download Buttons */}
         <motion.div

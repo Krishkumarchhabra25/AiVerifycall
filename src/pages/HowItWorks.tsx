@@ -1,90 +1,93 @@
 "use client";
 import { motion } from "framer-motion";
-import { Phone, Brain, Shield, CheckCircle } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 
-const steps = [
-  {
-    icon: Phone,
-    title: "Download & Activate",
-    description:
-      "Install the VerifyCall app and authenticate your mobile or landline number. The app runs silently in the background.",
-    color: "blue",
-  },
-  {
-    icon: Brain,
-    title: "Smart Detection",
-    description:
-      "Our AI listens for every inbound call and instantly checks if it’s from a verified organisation.",
-    color: "purple",
-  },
-  {
-    icon: Shield,
-    title: "Trust Layer Engaged",
-    description:
-      "If verified, you get a real-time notification. If not—no alert. No popup means no trust.",
-    color: "green",
-  },
-  {
-    icon: CheckCircle,
-    title: "Peace of Mind",
-    description: "You make confident decisions. No scams. Just trust.",
-    color: "teal",
-  },
+const points = [
+  "It must not rely on analysis, guesswork, or trial and error.",
+  "It must be immune to manipulation, misuse, or impersonation.",
+  "It must respect data privacy and align with cybersecurity standards.",
+  "It must be robust, secure, reliable — and above all, trustworthy.",
 ];
 
 const HowItWorks = () => {
   return (
     <section
       id="howitworks"
-      className="relative z-10 text-white py-24 px-6 sm:px-10 overflow-hidden"
-      style={{
-        background: "radial-gradient(ellipse at center, #121625 0%, #0e1217 100%)",
-      }}
-    >
-     
+      className="relative z-10 py-24 px-6 sm:px-10 text-white overflow-hidden"
 
-      {/* Heading */}
-      <div className="max-w-7xl mx-auto text-center mb-16 relative z-10">
-        <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="text-4xl md:text-5xl font-extrabold"
-        >
+    >
+      {/* Centered Title */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        className="text-center max-w-4xl mx-auto mb-16"
+      >
+        <h2 className="text-4xl md:text-5xl font-extrabold mb-4">
           How{" "}
           <span className="bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
             VerifyCall
           </span>{" "}
-          Works
-        </motion.h2>
+          works?
+        </h2>
 
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg text-gray-400 max-w-2xl mx-auto mt-6"
+ 
+      </motion.div>
+
+      {/* Two-column layout */}
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        {/* Left Image */}
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          className="flex justify-center"
         >
-          A real-time fraud prevention app that places a “trust layer” over every inbound call from a verified organisation.
-        </motion.p>
-      </div>
+          <div
+            className="rounded-xl border border-gray-700"
+            style={{
+              width: "500px",
+              height: "500px",
+              aspectRatio: "98 / 67",
+              background:
+                "url('/src/assets/images/howverifycallwork.jpg') lightgray -140.075px 2px / 133.446% 97.593% no-repeat",
+            }}
+          />
+        </motion.div>
 
-      {/* Steps Grid */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-14 relative z-10">
-        {steps.map((step, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
-            className="flex flex-col items-center text-center space-y-6"
-          >
-            <div className="w-20 h-20 rounded-full flex items-center justify-center bg-[#1a1f27] border border-gray-700 shadow-md">
-              <step.icon className={`text-${step.color}-400`} size={32} />
-            </div>
-            <h3 className="text-xl font-semibold text-white">{step.title}</h3>
-            <p className="text-sm text-gray-400 max-w-xs">{step.description}</p>
-          </motion.div>
-        ))}
+        {/* Right Content */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+                 <p className="text-gray-300 leading-relaxed mb-6">
+          When we set out to develop a solution, we knew it had to be infallible and dependable — something banks and institutions could recommend to their customers with complete confidence.
+        </p>
+          <p className="text-white font-semibold mb-5 ">
+            To achieve this, we followed four key principles:
+          </p>
+
+          <ul className="space-y-4 mb-8">
+            {points.map((point, i) => (
+              <li key={i} className="flex items-start gap-3">
+                <CheckCircle className="text-purple-500 mt-1" size={20} />
+                <span className="text-gray-300">{point}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="text-white text-[14px] mb-5 ">
+
+          Guided by these principles, we developed a novel technical solution that we are proud to say meets every one of these criteria.
+</p>
+          <p className="text-white text-[14px] mb-3 ">
+
+This is our secret sauce, and we’re happy to share the details in confidence.
+</p>
+          <button className="mt-4 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-medium rounded-full hover:opacity-90 transition">
+            Learn More →
+          </button>
+        </motion.div>
       </div>
     </section>
   );

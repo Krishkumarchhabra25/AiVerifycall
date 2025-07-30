@@ -9,7 +9,9 @@ import RightHeroCarousel from "@/components/VerticalCrouselEffect";
 import WhySection from "@/components/WhySection";
 import Footer from "@/components/Footer";
 import HowItWorksSection from "./HowItWorks";
-import ForOrganisations from "./TheCompany";
+import ForOrganisations from "./ForOrganisations";
+import ScamAlertsSection from "./ScamAlerts";
+import CompanySection from "./Company";
 
 const Index = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -30,19 +32,18 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white transition-colors duration-300 overflow-x-hidden">
+    <div className="min-h-screen  text-white transition-colors duration-300 overflow-x-hidden">
       {/* Navigation Header */}
-      <nav className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 py-4 bg-gray-900/80 backdrop-blur-xl border-b border-gray-800 shadow-sm">
+      <nav className="absolute top-0 left-0 right-0 z-50 px-4 sm:px-6 py-10 ">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
-          >
-            VerifyCall
-          </motion.div>
-
+  initial={{ opacity: 0, x: -20 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.6 }}
+  className="flex items-center gap-2"
+>
+  <img src="/src/assets/images/Frame.svg" alt="Verify Icon" className="w-40 mx-10 " />
+</motion.div>
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -103,7 +104,12 @@ const Index = () => {
 
       {/* Hero Section */}
       {/* Removed the absolute positioned background divs from here */}
-<section className="bg-[#0e1217] text-white relative overflow-x-hidden pt-20 min-h-screen flex items-center">
+<section
+  className="text-white relative overflow-x-hidden pt-30 min-h-screen flex items-center"
+  style={{
+    background: "linear-gradient(to right, #000000, #0C364A)",
+  }}
+>
   <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 flex flex-col md:flex-row justify-between items-center md:space-x-8">
     {/* Left: Hero */}
     <div className="w-full md:w-1/2 flex justify-center md:justify-start mb-8 md:mb-0 relative z-10">
@@ -122,7 +128,11 @@ const Index = () => {
 
       <section
         id="why-verifycall"
-        className=" bg-gradient-to-br from-gray-900 via-gray-950 to-black"
+         style={{
+    background: "linear-gradient(to right, #000000, #0C364A)",
+
+  }}
+  className="pt-10"
       >
         <WhySection />
       </section>
@@ -130,24 +140,41 @@ const Index = () => {
 
  <section
         id="fororganisations"
-        className=" bg-gradient-to-br from-gray-900 via-gray-950 to-black"
+      style={{
+    background: "linear-gradient(to right, #000000, #0C364A)",
+  }}
       >
         <ForOrganisations />
       </section>
-      <section id="benefits" className="bg-gray-900"></section>
+      <section id="benefits" ></section>
       <section
         id="howitworks"
-        className=" bg-gradient-to-br from-gray-900 via-gray-950 to-black"
+        style={{
+    background: "linear-gradient(to right, #000000, #0C364A)",
+  }}
       >
         <HowItWorksSection />
       </section>
-      <section id="benefits" className="bg-gray-900"></section>
+      <section id="benefits"  style={{
+    background: "linear-gradient(to right, #000000, #0C364A)",
+  }}>
+        <ScamAlertsSection />
+      </section>
 
 
-      <section id="benefits" className="bg-gray-900"></section>
+      <section id="benefits" style={{
+    background: "linear-gradient(to right, #000000, #0C364A)",
+  }}>
+        <CompanySection />
+      </section>
 
+ <section    style={{
+    background: "linear-gradient(to right, #000000, #0C364A)",
+  }}>
       <Footer />
+      </section>
     </div>
+    
   );
 };
 

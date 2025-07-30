@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
-import { Shield, AlertTriangle, TrendingDown, Users  , Phone ,  Zap , CheckCircle} from "lucide-react";
+import { Shield, AlertTriangle, TrendingDown, Users  } from "lucide-react";
 
-const featuresLeft = [
+
+
+
+
+const impactFeatures = [
   {
     icon: AlertTriangle,
     title: "Impersonation is exploding",
@@ -17,9 +21,6 @@ const featuresLeft = [
     title: "Training doesn't scale",
     description: "Even your most tech-savvy customers fall victim to remote fraud.",
   },
-];
-
-const featuresRight = [
   {
     icon: Shield,
     title: "Fighting yesterday’s battles",
@@ -38,311 +39,227 @@ const featuresRight = [
 ];
 
 
-
-const leftBenefits = [
+const benefitsLeft = [
   {
-    icon: Zap,
     title: "Instant call authentication",
-    description:
-      'Real-time validation tells customers "Verified Call" before they even say "hello".',
+    desc: "Real-time validation tells customers ‘Verified Call’ before they even say ‘hello.’",
   },
   {
-    icon: Shield,
     title: "Omnichannel scam shield",
-    description:
-      "Blocks impersonations from banks, govt agencies & more through one integration.",
+    desc: "Blocks impersonations from banks, govt agencies & more through one integration.",
   },
-    {
-    icon: CheckCircle,
+  {
     title: "Real-Time Caller Authentication",
-    description: "Confirms the verified organisation as soon as the phone rings. See “Verified organisation as a Caller” and pick up with confidence—or hang up safely, without the fear of missing an important call.",
-  },
-    {
-    icon: Zap,
-    title: "Pre-Emptive Fraud Blocking",
-    description: "Stops scammers in their track – no notification – no need to trust. Immediate protection from financial and personal information theft.",
+    desc: "Verified organisation shown at the start — no delay, no spoof risk.",
   },
 ];
 
-const rightBenefits = [
+const benefitsRight = [
   {
-    icon: Phone,
     title: "Protects beyond mobile",
-    description: "Even scam calls on landlines are verified and stopped.",
+    desc: "Even scam calls on landlines are verified and stopped.",
   },
   {
-    icon: Users,
     title: "Zero-friction experience",
-    description:
-      "No extra steps. Just a silent check and a trust badge. Better NPS, less hassle.",
-  },
-    {
-    icon: Shield,
-    title: "Effortless Always-On Protection",
-    description: "VerifyCall app works quietly in the background. Peace of mind knowing every incoming call is automatically verified. Requires sign in only once.",
+    desc: "No extra steps. Just a silent check and a trust badge.",
   },
   {
-    icon: Phone,
-    title: "Protects Beyond Mobile",
-    description: "Even scam calls on landlines are verified and stopped.",
+    title: "Effortless Always-On Protection",
+    desc: "Every call is automatically verified. Peace of mind, no setup needed.",
   },
 ];
-
 
 
 const WhySection = () => {
   return (
-    <section className="bg-[#0e1217] text-white py-20 md:py-12">
+    <section   style={{
+    background: "linear-gradient(to right, #000000, #0C364A)",
+  }} className="  md:py-12">
       {/* Heading */}
-      <div className="max-w-7xl mx-auto px-4 text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-3xl sm:text-4xl md:text-5xl font-bold"
-        >
-          Why <span className="text-indigo-500">VerifyCall</span>
-        </motion.h2>
+    <div className="max-w-7xl mx-auto px-4 mt-20">
+  <motion.h2
+    initial={{ opacity: 0, y: -20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6 }}
+    className="text-3xl sm:text-4xl md:text-5xl font-bold text-center"
+  >
+    Why should you use <span className="text-[#6D44FA]">VerifyCall?</span>
+  </motion.h2>
 
+  <div className="mt-30 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 place-items-center">
+    {impactFeatures.map((feature, idx) => {
+      const Icon = feature.icon;
+      return (
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-10"
+          key={idx}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: idx * 0.1 }}
+          className="flex flex-col items-start gap-4 w-full max-w-[461px] p-[59px_50px] rounded-[40px] border border-[#98F9FF]"
+          style={{
+            background:
+              "radial-gradient(151.92% 127.02% at 15.32% 21.04%, rgba(165, 239, 255, 0.20) 0%, rgba(110, 191, 244, 0.04) 77.08%, rgba(70, 144, 212, 0.00) 100%), radial-gradient(60.09% 46.26% at 3.8% 4.72%, rgba(255, 255, 255, 0.06) 0%, rgba(153, 153, 153, 0.06) 100%)",
+            backdropFilter: "blur(40px)",
+          }}
         >
-          <p className="text-3xl sm:text-4xl font-bold tracking-wide drop-shadow-lg animate-pulse">
-         ⚠️ The <span className="text-indigo-500">Impact</span> 
-          </p>
+          <Icon size={40} className="text-indigo-400" />
+          <h3 className="text-xl font-bold text-white">{feature.title}</h3>
+          <p className="text-sm text-white/70">{feature.description}</p>
         </motion.div>
-      </div>
-
-      {/* Impact Grid */}
-      <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto px-4 items-center">
-        {/* Left Impact Points */}
-        <div className="space-y-10">
-          {featuresLeft.map((feature, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="flex items-start gap-4"
-            >
-              <div className="p-3 bg-[#1a1f27] rounded-xl border border-gray-700">
-                <feature.icon className="text-indigo-400" size={24} />
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-1">{feature.title}</h3>
-                <p className="text-sm text-gray-400">{feature.description}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Center Image */}
-       <motion.div
-  initial={{ opacity: 0, scale: 0.9 }}
-  whileInView={{ opacity: 1, scale: 1 }}
-  transition={{ duration: 0.6 }}
-  className="relative flex justify-center items-center"
->
-  {/* Layered vibrant background */}
-  <div className="absolute w-[340px] h-[340px] sm:w-[420px] sm:h-[420px] md:w-[500px] md:h-[500px] bg-gradient-to-br from-red-500/30 via-pink-400/20 to-purple-600/20 blur-[120px] rounded-full z-0" />
-  <div className="absolute w-[180px] h-[180px] bg-gradient-to-tr from-red-400/30 to-purple-400/20 blur-[90px] rounded-full z-0" />
-
-  <div className="relative z-10">
-    <img
-      src="/images/dwnfall2.png"
-      alt="Money Loss Impact"
-      className="w-[240px] sm:w-[300px] md:w-[360px] drop-shadow-2xl rounded-2xl"
-    />
-
-    {/* Bottom Gradient Fade */}
-    <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[#0b0e14] to-transparent rounded-b-2xl pointer-events-none" />
+      );
+    })}
   </div>
-</motion.div>
+</div>
 
 
-        {/* Right Impact Points */}
-        <div className="space-y-10">
-          {featuresRight.map((feature, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="flex items-start gap-4"
-            >
-              <div className="p-3 bg-[#1a1f27] rounded-xl border border-gray-700">
-                <feature.icon className="text-indigo-400" size={24} />
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-1">{feature.title}</h3>
-                <p className="text-sm text-gray-400">{feature.description}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-
-{/* ✅ Only ONE Solution section */}
-<div className="relative mt-40 z-10">
-  {/* Background gradients */}
-  <div className="absolute -top-20 -left-20 w-[500px] h-[500px] bg-indigo-500/20 blur-[120px] rounded-full z-0" />
-  <div className="absolute -bottom-32 right-0 w-[500px] h-[500px] bg-purple-500/20 blur-[120px] rounded-full z-0" />
-
-  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 px-6 items-center relative z-10">
-    {/* Text Content */}
+ 
+     {/* Solution Section */}
+<section className="relative  mt-50 px-4">
+  <motion.h2
+    initial={{ opacity: 0, y: -20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6 }}
+    className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mt-70 "
+  >
+    What Is  <span className="text-[#6D44FA]">The Solution</span>
+  </motion.h2>
+  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 mt-35  items-center">
+    {/* Left Image */}
     <motion.div
       initial={{ opacity: 0, x: -40 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6 }}
+      className="flex justify-center"
     >
-  <h2 className="text-4xl sm:text-5xl font-extrabold mb-6">
-  <span className="text-white">The </span>
-  <span className="bg-gradient-to-r from-indigo-400 to-purple-500 text-transparent bg-clip-text">
-    Solution
-  </span>
-</h2>
+      <img
+        src="/src/assets/images/solution.jpg" // replace with actual image path
+        alt="Maze door light"
+        className="rounded-[20px] border border-[#6D44FA] w-full max-w-[500px] shadow-2xl"
+      />
+    </motion.div>
+ {/* Right Content */}
+    <motion.div
+      initial={{ opacity: 0, x: 40 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6 }}
+      className="text-left"
+    >
+      <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+        Proactive <span className="text-[#6D44FA]">Prevention</span> not<br />
+        Reactive <span className="text-[#6D44FA]">Detection</span>.
+      </h2>
 
-      <p className="text-xl font-semibold bg-gradient-to-r from-indigo-400 to-purple-500 text-transparent bg-clip-text mb-4">
-        Proactive prevention, not reactive detection.
-      </p>
-      <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
-        <strong className="text-white">Verify Call</strong> is the proactive shield that ends the call before the con.
+      <p className="text-base sm:text-lg text-white/70 leading-relaxed mb-6">
+        <strong className="text-white">VerifyCall</strong> is the proactive shield that ends the call before the con.
         It embeds a real-time verification layer between every inbound call and your customers —
         ending impersonation attempts <strong>before a word is spoken</strong>.
-        <br /><br />
-        No guesswork. No post-transaction clean-up. Just trust — delivered in real time.
       </p>
+
+      <ul className="space-y-3 text-sm sm:text-base text-white/90">
+        <li className="flex items-center gap-3">
+          <span className="w-6 h-6 bg-[#6D44FA] text-white rounded-full flex items-center justify-center text-sm font-bold">✓</span>
+          No guesswork
+        </li>
+        <li className="flex items-center gap-3">
+          <span className="w-6 h-6 bg-[#6D44FA] text-white rounded-full flex items-center justify-center text-sm font-bold">✓</span>
+          No post-transaction clean-up.
+        </li>
+        <li className="flex items-center gap-3">
+          <span className="w-6 h-6 bg-[#6D44FA] text-white rounded-full flex items-center justify-center text-sm font-bold">✓</span>
+          Just trust – Delivered in real time.
+        </li>
+      </ul>
     </motion.div>
 
-    {/* Image + Floating Labels */}
-    <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.6 }}
-      className="relative flex justify-center"
-    >
-      <div className="relative w-fit">
-        {/* Background Blur */}
-        <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-purple-500/10 to-indigo-500/10 blur-[100px] rounded-3xl z-0" />
 
-        {/* Image */}
-        <img
-          src="/images/staircase.jpg"
-          alt="Verify Call Solution"
-          className="relative z-10 w-[240px] sm:w-[320px] md:w-[500px] drop-shadow-2xl rounded-xl"
-        />
-
-    
-      </div>
-    </motion.div>
   </div>
-</div>
+</section>
 
-{/* only Benfits section */}
-<div className="relative mt-40 z-10">
-     {/* Background gradients */}
-  <div className="absolute -top-20 -left-20 w-[500px] h-[500px] bg-indigo-500/20 blur-[120px] rounded-full z-0" />
-  <div className="absolute -bottom-32 right-0 w-[500px] h-[500px] bg-purple-500/20 blur-[120px] rounded-full z-0" />
 
-  
-        {/* Heading */}
-        <div className="max-w-7xl mx-auto px-4 text-center z-10 relative">
-          <motion.h2
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold"
-          >
-           <h2 className="text-4xl sm:text-5xl font-extrabold mb-6">
-    <span className="text-white">The </span>
-    <span className="bg-gradient-to-r from-indigo-400 to-purple-500 text-transparent bg-clip-text">
-      Benefits
-    </span>
-  </h2>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: -10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl font-semibold bg-gradient-to-r from-indigo-400 to-purple-500 text-transparent bg-clip-text mb-4"
-          >
-            Empowering Trust, Preventing Fraud
-          </motion.p>
-        </div>
-  
-        {/* Grid Layout */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 md:p-10 gap-12 max-w-7xl mx-auto px-4 items-center z-10 relative">
-          {/* Left Benefits */}
-          <div className="space-y-10">
-            {leftBenefits.map((feature, index) => {
-              const Icon = feature.icon;
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="flex items-start gap-4"
-                >
-                  <div className="p-3 bg-[#1a1f27] rounded-xl border border-gray-700">
-                    <Icon className="text-indigo-400" size={24} />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-1">{feature.title}</h3>
-                    <p className="text-sm text-gray-400">{feature.description}</p>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-  
-          {/* Center Image with glow */}
-        <motion.div
-  initial={{ opacity: 0, scale: 0.95 }}
-  whileInView={{ opacity: 1, scale: 1 }}
-  transition={{ duration: 0.5 }}
-  className="relative flex justify-center items-center"
+<motion.div
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  className="relative flex flex-col items-center justify-center text-white w-full mt-80"
 >
-  {/* Soft glowing gradient layers */}
-  <div className="absolute w-[300px] h-[300px] sm:w-[360px] sm:h-[360px] md:w-[420px] md:h-[420px] bg-gradient-to-br from-indigo-500/30 via-blue-400/20 to-purple-600/20 blur-[120px] rounded-full z-0" />
-  <div className="absolute w-[200px] h-[200px] bg-gradient-to-tr from-purple-400/30 to-blue-500/20 blur-[80px] rounded-full z-0" />
+  <div className="text-center mb-12 px-4">
+    <h2 className="text-4xl sm:text-5xl font-bold mb-2">
+      The Benefits of using <span className="text-[#6D44FA]">VerifyCall</span>
+    </h2>
+    <p className="text-lg text-white/70">Empowering Trust, Preventing Fraud.</p>
+  </div>
 
-  <img
-    src="/images/roi.png"
-    alt="Benefits Mockup"
-    className="relative z-10 w-[540px] sm:w-[300px] md:w-[600px] drop-shadow-2xl rounded-2xl"
-  />
+  {/* Container */}
+  <div className="relative w-full max-w-[700px] aspect-square mx-auto">
+    {/* SVG connector lines */}
+    <svg className="absolute inset-0 w-full h-full z-0 pointer-events-none">
+      {[...benefitsLeft, ...benefitsRight].map((_, i, all) => {
+        const angle = (360 / all.length) * i - 90;
+        const r = 200; // smaller radius for line endpoint
+        const cx = 350, cy = 350; // center of 700x700 box
+        const x = cx + r * Math.cos((angle * Math.PI) / 180);
+        const y = cy + r * Math.sin((angle * Math.PI) / 180);
+        return (
+          <line
+            key={i}
+            x1={cx}
+            y1={cy}
+            x2={x}
+            y2={y}
+            stroke="#ffffff"
+            strokeWidth="1"
+            strokeOpacity="0.3"
+          />
+        );
+      })}
+    </svg>
+
+    {/* Center Image */}
+    <div className="absolute inset-0 flex items-center justify-center z-10">
+      <div className="rounded-full border-4 border-[#6D44FA] p-2 bg-[#1b2452]">
+        <img
+          src="/src/assets/images/organization.jpg"
+          alt="center"
+          className="w-36 h-36 sm:w-44 sm:h-44 rounded-full object-cover"
+        />
+      </div>
+    </div>
+
+    {/* Benefits Around Circle */}
+    {[...benefitsLeft, ...benefitsRight].map((item, i, all) => {
+      const angle = (360 / all.length) * i - 90;
+      const r = 240;
+      const x = r * Math.cos((angle * Math.PI) / 180);
+      const y = r * Math.sin((angle * Math.PI) / 180);
+      const align =
+        angle > 90 || angle < -90
+          ? "items-end text-right"
+          : "items-start text-left";
+
+      return (
+        <div
+          key={i}
+          className={`absolute flex gap-3 ${align} max-w-[220px]`}
+          style={{
+            top: `calc(50% + ${y}px)`,
+            left: `calc(50% + ${x}px)`,
+            transform: "translate(-50%, -50%)",
+          }}
+        >
+          <div className="bg-[#6D44FA] w-6 h-6 rounded-full flex items-center justify-center mt-1">
+            <span className="text-white text-sm font-bold">✓</span>
+          </div>
+          <div>
+            <h3 className="font-bold text-sm sm:text-base">{item.title}</h3>
+            <p className="text-xs sm:text-sm text-white/70">{item.desc}</p>
+          </div>
+        </div>
+      );
+    })}
+  </div>
 </motion.div>
 
-  
-          {/* Right Benefits */}
-          <div className="space-y-10">
-            {rightBenefits.map((feature, index) => {
-              const Icon = feature.icon;
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="flex items-start gap-4"
-                >
-                  <div className="p-3 bg-[#1a1f27] rounded-xl border border-gray-700">
-                    <Icon className="text-purple-400" size={24} />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-1">{feature.title}</h3>
-                    <p className="text-sm text-gray-400">{feature.description}</p>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-</div>
+
     </section>
   );
 };
