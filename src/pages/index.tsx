@@ -126,26 +126,28 @@ const Index = () => {
 
      
 
-      <section
-        id="why-verifycall"
-         style={{
-    background: "linear-gradient(to right, #000000, #0C364A)",
-
-  }}
-  className="pt-10"
-      >
-        <WhySection />
-      </section>
-
-
- <section
-        id="fororganisations"
-      style={{
+<section
+  id="why-verifycall"
+  style={{
     background: "linear-gradient(to right, #000000, #0C364A)",
   }}
-      >
-        <ForOrganisations />
-      </section>
+>
+  <div className="pt-10">
+    <WhySection />
+  </div>
+</section>
+
+<section
+  id="fororganisations"
+  style={{
+    background: "linear-gradient(to right, #000000, #0C364A)",
+  }}
+>
+  <div className="pt-10">
+    <ForOrganisations />
+  </div>
+</section>
+
       <section id="benefits" ></section>
       <section
         id="howitworks"

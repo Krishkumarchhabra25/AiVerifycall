@@ -44,10 +44,9 @@ const HowItWorks = () => {
           className="flex justify-center"
         >
           <div
-            className="rounded-xl border border-gray-700"
+            className="md:rounded-xl border border-gray-700 md:w-[500px] md:h-[500px] w-full"
             style={{
-              width: "500px",
-              height: "500px",
+             
               aspectRatio: "98 / 67",
               background:
                 "url('/src/assets/images/howverifycallwork.jpg') lightgray -140.075px 2px / 133.446% 97.593% no-repeat",

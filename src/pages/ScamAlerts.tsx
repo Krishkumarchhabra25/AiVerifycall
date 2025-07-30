@@ -8,7 +8,7 @@ const scamPosts = [
     date: '2025-07-10',
     image: '/src/assets/images/scam1.jpg',
     tags: ['#legalScams'],
-     tag: ['ScamAlert']
+    tag: ['ScamAlert'],
   },
   {
     title: 'The WhatsApp “Friend in Trouble” Scam: Don’t Fall for It!',
@@ -16,7 +16,7 @@ const scamPosts = [
     date: '2025-07-06',
     image: '/src/assets/images/scam2.jpg',
     tags: ['#whatsAppScams', '#impersonation'],
-     tag: ['ScamAlert']
+    tag: ['ScamAlert'],
   },
   {
     title: 'Amazon Delivery Scam Calls Are Back — Here’s What They Sound Like',
@@ -24,39 +24,33 @@ const scamPosts = [
     date: '2025-06-30',
     image: '/src/assets/images/scam3.jpg',
     tags: ['#amazonScams', '#deliveryFraud'],
-    tag: ['ScamAlert']
+    tag: ['ScamAlert'],
   },
 ];
 
 const ScamAlertsSection = () => {
   return (
-    <section className="py-40 px-6 sm:px-10  text-white">
+    <section className="py-20 px-4 sm:px-8 text-white">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
-        className="text-center max-w-[802px] mx-auto mb-16"
+        className="text-center max-w-3xl mx-auto mb-16"
       >
-    <h2 className="text-4xl md:text-5xl font-extrabold mb-4">
-  Recent{" "}
-  <span className="text-[#6D44FA]">
-    Scam
-  </span>{" "}
-  Alerts
-</h2>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">
+          Recent <span className="text-[#6D44FA]">Scam</span> Alerts
+        </h2>
 
-        <p className="text-base text-gray-300">
-          Stay One Step Ahead of Scammers
-        </p>
-        <p className="text-sm text-gray-400 mt-6 max-w-2xl mx-auto">
+        <p className="text-base text-gray-300">Stay One Step Ahead of Scammers</p>
+        <p className="text-sm text-gray-400 mt-4 sm:mt-6 max-w-2xl mx-auto">
           Every day, thousands of people fall victim to phone scams. VerifyCall helps you stay safe by identifying fraudulent calls and warning you instantly—before you even pick up.
         </p>
       </motion.div>
 
       {/* Cards */}
-      <div className="max-w-[1017px] mx-auto flex flex-col gap-8">
+      <div className="max-w-6xl mx-auto flex flex-col gap-10">
         {scamPosts.map((post, i) => (
           <motion.div
             key={i}
@@ -64,99 +58,46 @@ const ScamAlertsSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: i * 0.15 }}
             viewport={{ once: true }}
-            className="flex gap-6"
+            className="flex flex-col md:flex-row gap-6"
           >
-            {/* Left Image Box */}
+            {/* Image Box */}
             <div
-              className="flex-shrink-0"
+              className="w-full md:w-[345px] h-[226px] flex-shrink-0 rounded-[30px] border border-cyan-100 bg-cover bg-center"
               style={{
-                width: "345px",
-                height: "226px",
-                borderRadius: "29.935px",
-                border: "1.5px solid #98F9FF",
-                background: `url(${post.image}) lightgray 50% / cover no-repeat`,
-                backdropFilter: "blur(29.935px)",
+                backgroundImage: `url(${post.image})`,
               }}
             />
 
-            {/* Right Content Box */}
-            <div
-              style={{
-                width: "672px",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-              }}
-            >
+            {/* Content Box */}
+            <div className="w-full md:w-[672px] flex flex-col justify-between">
               <div>
-                <h3
-                  style={{
-                    color: "#FFFFFF",
-                    fontFamily: "Poppins",
-                    fontSize: "32px",
-                    fontWeight: 500,
-                    lineHeight: "normal",
-                    marginBottom: "10px",
-                  }}
-                >
-                  {post.title}
-                </h3>
-                <p
-                  style={{
-                    color: "rgba(255, 255, 255, 0.70)",
-                    fontFamily: "Poppins",
-                    fontSize: "16px",
-                    fontWeight: 400,
-                    lineHeight: "normal",
-                    marginBottom: "10px",
-                  }}
-                >
-                  {post.desc}
-                </p>
-                <div className="flex gap-2 flex-wrap">
+                <h3 className="text-2xl sm:text-[28px] md:text-[32px] font-medium mb-2">{post.title}</h3>
+                <p className="text-sm sm:text-base text-white/70 mb-3">{post.desc}</p>
+
+                {/* Hashtags */}
+                <div className="flex gap-2 flex-wrap text-sm text-white/50">
                   {post.tags.map((tag, j) => (
-                    <span
-                      key={j}
-                     
-                    >
-                      {tag}
-                    </span>
+                    <span key={j}>{tag}</span>
                   ))}
                 </div>
-                   {/* Footer */}
-              <div className="flex flex-wrap justify-between items-center gap-y-4">
-                <div className="text-sm text-gray-400">
-                  {post.date} | VerifyCall
-                </div>
-              
-              </div>
 
+                {/* Date + Source */}
+                <div className="flex flex-wrap justify-between items-center gap-y-4 mt-4 text-sm text-gray-400">
+                  <div>{post.date} | VerifyCall</div>
+                </div>
+
+                {/* Bubble Tag */}
                 <div className="flex gap-2 flex-wrap mt-4">
                   {post.tag.map((tag, j) => (
                     <span
                       key={j}
-                          style={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        width: "130.141px",
-                        height: "30.986px",
-                        padding: "7.746px",
-                        color: "rgba(255, 255, 255, 0.70)",
-                        fontFamily: "Poppins",
-                        fontSize: "16px",
-                        fontWeight: 600,
-                        border: "1px solid rgba(255, 255, 255, 0.3)",
-                        borderRadius: "9999px",
-                      }}
+                      className="px-4 py-1 border border-white/30 rounded-full text-sm font-semibold text-white/70"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
               </div>
-
-           
             </div>
           </motion.div>
         ))}

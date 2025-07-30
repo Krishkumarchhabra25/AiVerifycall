@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Shield, AlertTriangle, TrendingDown, Users  } from "lucide-react";
 
 
 
@@ -7,32 +6,32 @@ import { Shield, AlertTriangle, TrendingDown, Users  } from "lucide-react";
 
 const impactFeatures = [
   {
-    icon: AlertTriangle,
+    icon: "/src/assets/images/icon1.png",
     title: "Impersonation is exploding",
     description: "Spoofed numbers & fake call-centers slip through existing tools.",
   },
   {
-    icon: TrendingDown,
+    icon: "/src/assets/images/icon2.png",
     title: "Detection is too late",
     description: "Fraud is only caught after money moves and the damage is done.",
   },
   {
-    icon: Users,
+      icon: "/src/assets/images/icon3.png",
     title: "Training doesn't scale",
     description: "Even your most tech-savvy customers fall victim to remote fraud.",
   },
   {
-    icon: Shield,
+      icon: "/src/assets/images/icon4.png",
     title: "Fighting yesterday’s battles",
     description: "Banks rely on solutions that act after the criminal has made first contact.",
   },
   {
-    icon: Shield,
+  icon: "/src/assets/images/icon5.png",
     title: "Lack of proactive barriers",
     description: "There is no smart filter that blocks risky calls before they begin.",
   },
   {
-    icon: Shield,
+   icon: "/src/assets/images/icon6.png",
     title: "No real-time verification",
     description: "Calls are not verified until the user is already engaged.",
   },
@@ -102,7 +101,7 @@ const WhySection = () => {
             backdropFilter: "blur(40px)",
           }}
         >
-          <Icon size={40} className="text-indigo-400" />
+          <img src={Icon}  className="w-[116px] h-[100px]" />
           <h3 className="text-xl font-bold text-white">{feature.title}</h3>
           <p className="text-sm text-white/70">{feature.description}</p>
         </motion.div>
@@ -114,7 +113,7 @@ const WhySection = () => {
 
  
      {/* Solution Section */}
-<section className="relative  mt-50 px-4">
+<section className="relative  md:mt-50 px-4">
   <motion.h2
     initial={{ opacity: 0, y: -20 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -123,7 +122,7 @@ const WhySection = () => {
   >
     What Is  <span className="text-[#6D44FA]">The Solution</span>
   </motion.h2>
-  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 mt-35  items-center">
+  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 mt-15 md:mt-35  items-center">
     {/* Left Image */}
     <motion.div
       initial={{ opacity: 0, x: -40 }}
@@ -144,7 +143,7 @@ const WhySection = () => {
       transition={{ duration: 0.6 }}
       className="text-left"
     >
-      <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+      <h2 className=" text-3xl md:text-4xl sm:text-5xl font-bold text-white mb-6">
         Proactive <span className="text-[#6D44FA]">Prevention</span> not<br />
         Reactive <span className="text-[#6D44FA]">Detection</span>.
       </h2>
