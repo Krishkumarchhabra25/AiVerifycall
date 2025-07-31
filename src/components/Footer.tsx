@@ -6,18 +6,29 @@ const ProcessStep = ({
   title,
   description,
 }: {
-  icon: React.ReactNode;
+  icon: string;
   title: string;
   description: string;
 }) => (
   <div className="flex flex-col items-center text-center space-y-3 max-w-xs">
-    <div className="bg-white/10 w-12 h-12 flex items-center justify-center rounded-full text-white text-xl">
-      {icon}
+    <div
+      className="flex justify-center items-center w-20 h-20 p-[22px]"
+      style={{
+        borderRadius: "40px",
+        border: "1.5px solid #98F9FF",
+        background:
+          "radial-gradient(151.92% 127.02% at 15.32% 21.04%, rgba(165, 239, 255, 0.20) 0%, rgba(110, 191, 244, 0.04) 77.08%, rgba(70, 144, 212, 0.00) 100%), radial-gradient(60.09% 46.26% at 3.8% 4.72%, rgba(255, 255, 255, 0.06) 0%, rgba(153, 153, 153, 0.06) 100%)",
+        backdropFilter: "blur(40px)",
+        WebkitBackdropFilter: "blur(40px)",
+      }}
+    >
+      <img src={icon} alt={title} className="w-7 h-7 object-contain" />
     </div>
     <h4 className="font-semibold text-white text-base sm:text-lg">{title}</h4>
     <p className="text-gray-300 text-sm">{description}</p>
   </div>
 );
+
 
 const Footer = () => {
   return (
@@ -32,42 +43,44 @@ const Footer = () => {
         </p>
 
         {/* Process Steps */}
-        <div className="relative mt-14 mb-20">
-          {/* Horizontal line */}
-          <div className="hidden md:block absolute top-6 left-0 w-full h-px bg-white/20 z-0" />
-          <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 justify-items-center">
-            <ProcessStep
-              icon={<span className="text-xl">⬇️</span>}
-              title="Download & Activate"
-              description="Install the VerifyCall app and authenticate your number. The app runs silently."
-            />
-            <ProcessStep
-              icon={<span className="text-xl">⚙️</span>}
-              title="Smart Detection"
-              description="App listens to inbound calls and checks if it’s from a verified organisation."
-            />
-            <ProcessStep
-              icon={<span className="text-xl">🛡️</span>}
-              title="Trust Layer Engaged"
-              description="If verified, you get notified. If not—no alert, no popup means no trust."
-            />
-            <ProcessStep
-              icon={<span className="text-xl">✅</span>}
-              title="Peace of Mind"
-              description="Make confident decisions. No scams. Just trust."
-            />
-          </div>
-        </div>
+     <div className="relative mt-14 mb-20">
+  {/* Horizontal line */}
+  <div className="hidden md:block absolute top-10 left-[10%] w-[80%] h-px border-t border-[#98F9FF] z-0" />
+
+  <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 justify-items-center">
+    <ProcessStep
+      icon="/src/assets/images/download.svg"
+      title="Download & Activate"
+      description="Install the VerifyCall app and authenticate your mobile or landline number. The app runs silently in the background."
+    />
+    <ProcessStep
+      icon="/src/assets/images/chip.svg"
+      title="Smart Detection"
+      description="Our AI listens for every inbound call and instantly checks if it’s from a verified organisation."
+    />
+    <ProcessStep
+      icon="/src/assets/images/layer.svg"
+      title="Trust Layer Engaged"
+      description="If verified, you get a real-time notification. If not—no alert. No popup means no trust."
+    />
+    <ProcessStep
+      icon="/src/assets/images/mind.svg"
+      title="Peace of Mind"
+      description="You make confident decisions. No scams. Just trust."
+    />
+  </div>
+</div>
+
       </div>
 
       {/* Footer Content */}
-      <div className="border-t border-white/10 pt-10">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-sm">
+    <div className="pt-10">
+  <div className="max-w-6xl mx-auto h-[1px] bg-gradient-to-r from-[#6D44FA] via-[#9F6BFF] to-[#6D44FA]" />
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-sm mt-20">
           {/* Left Column */}
           <div className="text-center md:text-left">
-            <h3 className="text-2xl font-bold mb-4">
-              Verif<span className="text-purple-400">yC</span>all
-            </h3>
+            <img src="/src/assets/images/Frame.svg" alt="Verify Icon" className="w-40 mb-3 " />
+
             <div className="flex justify-center md:justify-start gap-4 text-lg">
               <FaFacebookF className="hover:text-purple-400 cursor-pointer" />
               <FaInstagram className="hover:text-purple-400 cursor-pointer" />
@@ -80,9 +93,9 @@ const Footer = () => {
           </div>
 
           {/* Middle Column - Quick Links */}
-          <div className="flex flex-wrap justify-center gap-12 text-center md:text-left">
+          <div className="flex flex-wrap justify-center gap-12  text-center md:text-left">
             <div>
-              <h4 className="font-semibold mb-4">Quick Links</h4>
+              <h4 className="font-semibold text-2xl mb-4">Quick Links</h4>
               <ul className="space-y-2">
                 {["Features", "Pricing", "Documentation", "Certificates"].map((link) => (
                   <li key={link}>
@@ -94,7 +107,7 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4 invisible">Spacer</h4>
+              <h4 className="font-semibold mb-6 invisible">Spacer</h4>
               <ul className="space-y-2">
                 {["Help Center", "Status", "Community", "Terms And Conditions"].map((link) => (
                   <li key={link}>
@@ -109,7 +122,7 @@ const Footer = () => {
 
           {/* Right Column - Contact */}
           <div className="text-center md:text-left">
-            <h4 className="font-semibold mb-4">Contact Us</h4>
+            <h4 className="font-semibold text-2xl mb-4">Contact Us</h4>
             <div className="space-y-3 text-gray-300">
               <div className="flex justify-center md:justify-start items-center gap-3">
                 <Phone size={16} />

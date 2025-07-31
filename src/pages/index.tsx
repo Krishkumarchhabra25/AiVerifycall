@@ -42,7 +42,7 @@ const Index = () => {
   transition={{ duration: 0.6 }}
   className="flex items-center gap-2"
 >
-  <img src="/src/assets/images/Frame.svg" alt="Verify Icon" className="w-40 mx-10 " />
+  <img src="/src/assets/images/Frame.svg" alt="Verify Icon" className="w-40 mx-20 " />
 </motion.div>
           <motion.div
             initial={{ opacity: 0, y: -10 }}

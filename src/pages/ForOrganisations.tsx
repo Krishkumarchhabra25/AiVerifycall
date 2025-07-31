@@ -1,31 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  ShieldCheck,
-  ThumbsUp,
-  AlertTriangle,
-  UserCheck,
-} from "lucide-react";
+
 
 const orgPoints = [
   {
-    icon: ShieldCheck,
+    icon: "/src/assets/images/tickmark.svg",
     title: "Trust Is the Root of All Scams",
     text: `All scams happen by callers gaining trust and establishing authenticity. VerifyCall takes that away from the scammers.`,
   },
   {
-    icon: AlertTriangle,
+    icon: "/src/assets/images/tickmark.svg",
     title: "Proactive Risk Prevention",
     text: `Risk teams can proactively prevent fraud, reducing reputational damage and reinforcing institutional trust.`,
   },
   {
-    icon: UserCheck,
+    icon: "/src/assets/images/tickmark.svg",
     title: "Lower Liability for Banks",
     text: `Once recommended to customers, institutions reduce their accountability in fraud cases where customers ignore call validation.`,
   },
   {
-    icon: ThumbsUp,
+    icon: "/src/assets/images/tickmark.svg",
     title: "Customer Confidence Boost",
     text: `Customers feel reassured knowing every incoming call is verified. It removes reliance on gut feeling.`,
   },
@@ -67,8 +62,8 @@ const ForOrganisations = () => {
                   className="flex items-start gap-4"
                 >
                   {/* Icon */}
-                  <div className="bg-purple-600/20 text-purple-400 p-2 rounded-full">
-                    <point.icon size={20} />
+                  <div className="">
+                    <img src={point.icon}  alt="tickimages" className="h-9" />
                   </div>
 
                   {/* Text Block */}

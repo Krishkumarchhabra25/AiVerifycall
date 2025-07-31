@@ -11,8 +11,7 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="text-white font-bold text-4xl sm:text-5xl lg:text-5xl leading-tight sm:leading-tight mb-6"
         >
-          Stops{" "}
-          <span className="text-[#6D44FA]">phone-based fraud</span>{" "}
+          Stops <span className="text-[#6D44FA]">phone-based fraud</span>{" "}
           before the conversation starts.
         </motion.h1>
 
@@ -22,7 +21,10 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-white text-opacity-70 text-base sm:text-lg lg:text-xl leading-relaxed mb-10"
         >
-          VerifyCall is the real-time call-validation layer built to prevent cyber fraud. VerifyCall instantly authenticates every inbound call, shutting down impersonation scams, reducing fraud losses and restoring customer trust.
+          VerifyCall is the real-time call-validation layer built to prevent
+          cyber fraud. VerifyCall instantly authenticates every inbound call,
+          shutting down impersonation scams, reducing fraud losses and
+          restoring customer trust.
         </motion.p>
 
         {/* App Store Download Buttons */}
@@ -36,47 +38,58 @@ const Hero = () => {
           <div className="flex items-center gap-3 text-gray-600 dark:text-gray-400 text-sm md:hidden">
             <div className="flex items-center gap-1">
               <Smartphone size={16} />
-              <span className="font-medium">For Customers:</span>
+              <span className="text-[12px]">For Customers:</span>
             </div>
             <div className="flex items-center gap-2">
-              {/* App Store icon */}
-              <a href="#" className="w-9 h-9 p-1.5 rounded-md flex items-center justify-center bg-gray-100 dark:bg-white/10 text-black dark:text-white hover:bg-gray-200 dark:hover:bg-white/20 transition-colors">
-                {/* SVG */}
+              <a
+                href="#"
+                className="w-16 h-16 p-1.5 rounded-md flex items-center justify-center transition-colors"
+              >
+                <img
+                  src="/src/assets/images/appstore.svg"
+                  alt="App Store"
+                  className="w-full h-full object-contain"
+                />
               </a>
-              {/* Google Play icon */}
-              <a href="#" className="w-9 h-9 p-1.5 rounded-md flex items-center justify-center bg-gray-100 dark:bg-white/10 text-black dark:text-white hover:bg-gray-200 dark:hover:bg-white/20 transition-colors">
-                {/* SVG */}
+              <a
+                href="#"
+                className="w-16 h-16 p-1.5 rounded-md flex items-center justify-center transition-colors"
+              >
+                <img
+                  src="/src/assets/images/playstore.svg"
+                  alt="Google Play"
+                  className="w-full h-full object-contain"
+                />
               </a>
             </div>
           </div>
 
-          {/* Desktop: full buttons */}
+          {/* Desktop: full buttons with SVGs */}
           <div className="hidden md:flex items-center gap-4 text-gray-600 dark:text-gray-400">
             <div className="flex items-center gap-2">
               <Smartphone size={20} />
               <span className="font-medium">For Customers:</span>
             </div>
             <div className="flex gap-3">
-              {/* Full App Store button */}
               <a
                 href="#"
-                className="flex items-center space-x-3 bg-white dark:bg-white/10 text-black dark:text-white px-5 py-3 rounded-xl font-semibold hover:bg-gray-100 dark:hover:bg-white/20 transition-colors shadow"
+                className="flex items-center px-5 py-3 rounded-xl font-semibold transition-colors shadow"
               >
-                {/* SVG */}
-                <div className="text-left">
-                  <div className="text-sm font-bold">App Store</div>
-                </div>
+                <img
+                  src="/src/assets/images/appstore.svg"
+                  alt="App Store"
+                  className="w-[120px] h-auto object-contain"
+                />
               </a>
-
-              {/* Full Google Play button */}
               <a
                 href="#"
-                className="flex items-center space-x-3 bg-white dark:bg-white/10 text-black dark:text-white px-5 py-3 rounded-xl font-semibold hover:bg-gray-100 dark:hover:bg-white/20 transition-colors shadow"
+                className="flex items-center  px-5 py-3 rounded-xl transition-colors shadow"
               >
-                {/* SVG */}
-                <div className="text-left">
-                  <div className="text-sm font-bold">Google Play</div>
-                </div>
+                <img
+                  src="/src/assets/images/playstore.svg"
+                  alt="Google Play"
+                  className="w-[135px] h-auto object-contain"
+                />
               </a>
             </div>
           </div>
